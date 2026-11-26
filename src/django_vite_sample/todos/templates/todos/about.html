@@ -1,0 +1,17 @@
+{% extends "todos/base.html" %}
+
+{% block title %}About{% endblock %}
+
+{% block content %}
+	<article class="prose">
+		<h1>About</h1>
+		<p>
+			These pages are rendered by Django templates. They manage the same todos as the Svelte app,
+			but with plain HTML forms instead of the JSON API, so they work without JavaScript.
+		</p>
+		<p>
+			They have their own plum and rose palette, in <code>todos/static/todos/site.css</code>, so you
+			can tell them apart from the Svelte pages.
+		</p>
+	</article>
+{% endblock %}

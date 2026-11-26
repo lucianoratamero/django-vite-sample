@@ -1,0 +1,28 @@
+{% load static %}<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="text-scale" content="scale" /><!-- same as the Svelte index.html, so rem sizes match -->
+		<title>{% block title %}{% endblock %} · Django</title>
+		<link rel="icon" href="data:," /><!-- no icon; stops the browser's /favicon.ico 404 -->
+		<link rel="stylesheet" href="{% static 'todos/site.css' %}" />
+	</head>
+	<body>
+		<header>
+			<nav>
+				<a href="{% url 'todo-list' %}" class="brand"><span>django</span>-rendered</a>
+				<ul>
+					{% with current=request.resolver_match.url_name %}
+						<li><a href="{% url 'todo-list' %}"{% if current == 'todo-list' %} aria-current="page"{% endif %}>Todos</a></li>
+						<li><a href="{% url 'about' %}"{% if current == 'about' %} aria-current="page"{% endif %}>About</a></li>
+					{% endwith %}
+				</ul>
+			</nav>
+		</header>
+
+		<main>{% block content %}{% endblock %}</main>
+
+		<footer>Rendered by Django templates, no JavaScript</footer>
+	</body>
+</html>

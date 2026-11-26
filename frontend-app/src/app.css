@@ -1,0 +1,45 @@
+@import 'tailwindcss';
+@import 'allo-font/friendly'; /* roundness fixed at the default 50, half the size of the full font */
+@plugin '@tailwindcss/typography';
+
+/* Same stack as the Django pages' site.css */
+@theme {
+	--font-sans: 'Allo', ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Palette copied from lincolnloop.com's stylesheet */
+@theme {
+	--color-spray: #76ccd6;
+	--color-spray-100: #d7f2f4;
+	--color-spray-200: #b8e5ea;
+	--color-spray-400: #4bb7c3;
+	--color-spray-500: #31a0aa;
+	--color-spray-600: #2a808d;
+	--color-spray-700: #296c75;
+
+	--color-sea-green-500: #3a928b;
+	--color-sea-green-600: #2d7674;
+	--color-sea-green-700: #285b5c;
+	--color-sea-green-800: #26484b;
+	--color-sea-green-900: #153e42;
+	--color-sea-green-950: #07262c;
+
+	--color-gold-drop-400: #e3a054;
+	--color-gold-drop-500: #dc7f32;
+	--color-gold-drop-600: #d16429;
+	--color-gold-drop-700: #a94723;
+	--color-gold-drop-800: #8a3824;
+	--color-gold-drop-900: #6f2e1f;
+
+	--color-flare-50: #fffee5;
+	--color-flare-300: #ffe942;
+	--color-flare-400: #ffd70f;
+	--color-flare-500: #f0bc00;
+
+	--color-nero-50: #f7f8f8;
+	--color-nero-100: #f0f2f2;
+	--color-nero-200: #d7d9d9;
+	--color-nero-500: #8d8e8e;
+	--color-nero-900: #292929;
+	--color-nero-950: #0d0d0d;
+}

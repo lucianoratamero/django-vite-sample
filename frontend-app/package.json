@@ -1,0 +1,45 @@
+{
+	"name": "frontend-app",
+	"version": "0.0.1",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"check": "svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
+		"lint": "prettier --check . && eslint .",
+		"format": "prettier --write ."
+	},
+	"devDependencies": {
+		"@eslint/js": "^10.0.1",
+		"@sveltejs/vite-devtools-svelte": "^0.11.0",
+		"@sveltejs/vite-plugin-svelte": "^7.3.1",
+		"@tailwindcss/typography": "^0.5.20",
+		"@tailwindcss/vite": "^4.3.5",
+		"@types/node": "^26",
+		"@vitejs/devtools": "^0.8.3",
+		"@vitejs/devtools-oxc": "^0.8.3",
+		"@vitejs/devtools-rolldown": "^0.8.3",
+		"@vitejs/devtools-vite": "^0.8.3",
+		"@vitejs/devtools-vitest": "^0.8.3",
+		"eslint": "^10.15.0",
+		"eslint-config-prettier": "^10.1.8",
+		"eslint-plugin-svelte": "^3.24.1",
+		"globals": "^17.14.0",
+		"prettier": "^3.10.1",
+		"prettier-plugin-svelte": "^4.1.1",
+		"prettier-plugin-tailwindcss": "^0.8.1",
+		"sv-router": "^0.19.0",
+		"svelte": "^5.57.3",
+		"svelte-check": "^4.7.8",
+		"tailwindcss": "^4.3.5",
+		"typescript": "^6.0.3",
+		"typescript-eslint": "^8.72.2",
+		"vite": "^8.3.8"
+	},
+	"dependencies": {
+		"allo-font": "^1.1.0"
+	}
+}

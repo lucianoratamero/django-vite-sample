@@ -1,0 +1,43 @@
+{% extends "todos/base.html" %}
+
+{% block title %}Todos{% endblock %}
+
+{% block content %}
+	<section class="todo-page">
+		<h1>Todos</h1>
+		<p class="count">{{ remaining }} of {{ todos|length }} left to do</p>
+
+		<form method="post" class="add">
+			{% csrf_token %}
+			<label for="{{ form.text.id_for_label }}" class="sr-only">New todo</label>
+			{{ form.text }}
+			<button>Add</button>
+		</form>
+
+		{% if form.text.errors %}
+			<p role="alert" class="alert">{{ form.text.errors|join:" " }}</p>
+		{% endif %}
+
+		<ul class="todos">
+			{% for todo in todos %}
+				<li>
+					<form method="post" action="{% url 'todo-done' todo.pk %}">
+						{% csrf_token %}
+						{# Send the state we want, so a double submit can't flip it back. #}
+						<input type="hidden" name="done" value="{{ todo.done|yesno:'false,true' }}" />
+						<button class="check" aria-pressed="{{ todo.done|yesno:'true,false' }}" aria-label="Done: {{ todo.text }}">
+							{{ todo.done|yesno:"✓," }}
+						</button>
+					</form>
+					<span{% if todo.done %} class="done"{% endif %}>{{ todo.text }}</span>
+					<form method="post" action="{% url 'todo-delete' todo.pk %}">
+						{% csrf_token %}
+						<button class="delete" aria-label="Delete “{{ todo.text }}”">✕</button>
+					</form>
+				</li>
+			{% empty %}
+				<li class="empty">All done.</li>
+			{% endfor %}
+		</ul>
+	</section>
+{% endblock %}
