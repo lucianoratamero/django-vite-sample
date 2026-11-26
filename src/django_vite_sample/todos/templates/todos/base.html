@@ -26,3 +26,45 @@
 		<footer>Rendered by Django templates, no JavaScript</footer>
 	</body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% comment %} {% load static %} {% load django_vite %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {% vite_hmr_client %}
+  </head>
+  <body id="app">
+    {% vite_asset "src/main.ts" %}
+  </body>
+</html> {% endcomment %}
+

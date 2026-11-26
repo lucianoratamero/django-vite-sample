@@ -14,6 +14,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "corsheaders",
     "rest_framework",
+    # "django_vite",
     "django_vite_sample.todos",
 ]
 
@@ -45,3 +46,6 @@ STATIC_ROOT = BASE_DIR / "static"
 # The Svelte (Vite) dev server, when run side by side with Django.
 CORS_ALLOWED_ORIGINS = ["http://localhost:5173", "http://localhost:8000"]
 
+# DJANGO_VITE = {"default": {"dev_mode": DEBUG}}
+
+# STATICFILES_DIRS = [BASE_DIR / "frontend-app" / "dist"]

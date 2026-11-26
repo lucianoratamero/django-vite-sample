@@ -9,5 +9,10 @@ export default defineConfig({
 		tailwindcss(),
 		svelte()
 	],
-	devtools: { apply: 'serve', clientAuth: true }
+	devtools: { apply: 'serve', clientAuth: true },
+	// base: '/static',
+	// build: {
+	// 	manifest: 'manifest.json',
+	// 	rolldownOptions: { input: ['index.html', 'src/main.ts'] }
+	// }
 });
