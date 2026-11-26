@@ -18,7 +18,8 @@ As cores são diferentes de propósito, pra ficar fácil saber em qual versão v
 
 - **Backend:** Python 3.13+, Django 6, Django REST framework, django-cors-headers, django-vite
 - **Frontend:** Svelte 5 (runes), Vite 8, Tailwind CSS 4 + typography, sv-router, TypeScript
-- **Ferramentas:** [uv](https://docs.astral.sh/uv/), ruff, npm, Prettier, ESLint
+- **Ferramentas:** [uv](https://docs.astral.sh/uv/), ruff, npm,
+  [oxfmt](https://oxc.rs/docs/guide/usage/formatter), ESLint
 
 ## Estrutura
 
@@ -87,7 +88,7 @@ uv run ruff check && uv run ruff format --check
 
 cd frontend-app
 npm run check   # svelte-check / TypeScript
-npm run lint    # Prettier + ESLint
+npm run lint    # oxfmt + ESLint
 ```
 
 ## Fonte
