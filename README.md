@@ -36,22 +36,25 @@ frontend-app/                 app Svelte + Vite
 Você vai precisar de [uv](https://docs.astral.sh/uv/) e Node.js (as versões usadas estão em
 `.tool-versions`).
 
-**Backend** (terminal 1):
+Na primeira vez, instale as dependências e crie o banco:
 
 ```sh
 uv sync
 uv run python manage.py migrate
-uv run python manage.py runserver   # http://localhost:8000
-```
-
-**Frontend** (terminal 2):
-
-```sh
 cd frontend-app
 npm install
 cp .env.example .env   # VITE_API_HOST aponta pro Django em :8000
-npm run dev            # http://localhost:5173
+cd ..
 ```
+
+Depois, suba os dois servidores juntos:
+
+```sh
+make dev   # Django em http://localhost:8000 e Vite em http://localhost:5173
+```
+
+Um Ctrl+C para os dois. `make django` e `make vite` sobem só um deles. O uv não tem um executor de
+tarefas como os scripts do npm, por isso o `Makefile`.
 
 Abra o Svelte em `localhost:5173`, não em `127.0.0.1:5173`: o CORS do Django só libera
 `localhost`.
