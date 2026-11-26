@@ -1,0 +1,24 @@
+{
+	"files.associations": {
+		"**/frontend-app/**/*.css": "tailwindcss"
+	},
+	// One block per language: a combined "[svelte][typescript]" block loses to a user-level "[svelte]".
+	"[svelte]": {
+		"editor.defaultFormatter": "oxc.oxc-vscode",
+		"editor.formatOnSave": true
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "oxc.oxc-vscode",
+		"editor.formatOnSave": true
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "oxc.oxc-vscode",
+		"editor.formatOnSave": true
+	},
+	"[json]": {
+		"editor.defaultFormatter": "oxc.oxc-vscode",
+		"editor.formatOnSave": true
+	},
+	// The project formats with oxfmt, so a globally installed Prettier extension stays out of it.
+	"prettier.enable": false
+}
