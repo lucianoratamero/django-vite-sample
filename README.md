@@ -53,6 +53,9 @@ aponta pro Django em :8000):
 make setup
 ```
 
+O `make setup` também cria um superusuário `admin` com senha `admin` pra entrar no admin do Django
+em http://localhost:8000/admin/. É só pra desenvolvimento local.
+
 Depois, suba os dois servidores juntos:
 
 ```sh
@@ -73,6 +76,7 @@ Abra o Svelte em `localhost:5173`, não em `127.0.0.1:5173`: o CORS do Django s�
 | `/` e `/about` (Svelte) | As mesmas páginas, renderizadas pelo Svelte |
 | `GET`, `POST` `/api/todos/` | Lista e cria tarefas |
 | `GET`, `PATCH`, `PUT`, `DELETE` `/api/todos/<id>/` | Lê, atualiza e apaga uma tarefa |
+| `/admin/` | Admin do Django, com as tarefas cadastradas (login `admin` / `admin`) |
 
 ## Integração com o django-vite
 

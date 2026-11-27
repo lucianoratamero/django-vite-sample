@@ -1,4 +1,5 @@
-from django.urls import include, path
+from django.contrib import admin
+from django.urls import include, path, re_path
 from django.views.generic import TemplateView
 from rest_framework.routers import DefaultRouter
 
@@ -8,9 +9,10 @@ router = DefaultRouter()
 router.register("todos", TodoViewSet)
 
 urlpatterns = [
+    path("admin/", admin.site.urls),
     path("api/", include(router.urls)),
-    path("", todo_list, name="todo-list"),
     path("<int:pk>/done/", todo_done, name="todo-done"),
     path("<int:pk>/delete/", todo_delete, name="todo-delete"),
     path("about/", TemplateView.as_view(template_name="todos/about.html"), name="about"),
+    re_path(r"^.*$", todo_list, name="todo-list"),  # catch-all: keep last
 ]
