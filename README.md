@@ -37,6 +37,15 @@ frontend-app/                 app Svelte + Vite
 Você vai precisar de [uv](https://docs.astral.sh/uv/) e Node.js (as versões usadas estão em
 `.tool-versions`).
 
+Se você usa o [asdf](https://asdf-vm.com), é só ativar os plugins do Node.js e do Python e rodar
+`asdf install` pra ter os dois nas versões certas:
+
+```sh
+asdf plugin add nodejs
+asdf plugin add python
+asdf install
+```
+
 Na primeira vez, instale as dependências, crie o banco e o `frontend-app/.env` (o `VITE_API_HOST`
 aponta pro Django em :8000):
 
