@@ -37,6 +37,13 @@ export default defineConfig(
 		}
 	},
 	{
+		files: ['**/*.svelte'],
+		rules: {
+			// Scripts sit after the markup (oxfmt sortOrder), so this rule reads template uses as coming before the declarations.
+			'no-useless-assignment': 'off'
+		}
+	},
+	{
 		// Override or add rule settings here, such as:
 		// 'svelte/button-has-type': 'error'
 		rules: {}
