@@ -4,12 +4,8 @@ import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-	plugins: [
-		svelteDevtools(),
-		tailwindcss(),
-		svelte()
-	],
-	devtools: { apply: 'serve', clientAuth: true },
+	plugins: [svelteDevtools(), tailwindcss(), svelte()],
+	devtools: { apply: 'serve', clientAuth: true }
 	// base: '/static',
 	// build: {
 	// 	manifest: 'manifest.json',

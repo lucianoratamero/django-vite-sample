@@ -1,17 +1,3 @@
-<script lang="ts">
-	import { createRouter, Router } from 'sv-router';
-	import About from './About.svelte';
-	import NotFound from './NotFound.svelte';
-	import Todos from './Todos.svelte';
-
-	const { isActive } = createRouter({ '/': Todos, '/about': About, '*': NotFound });
-
-	const links = [
-		{ href: '/', label: 'Todos' },
-		{ href: '/about', label: 'About' }
-	] as const;
-</script>
-
 <div class="flex min-h-screen flex-col bg-nero-50 text-nero-900">
 	<header class="bg-sea-green-900 text-white">
 		<nav class="mx-auto flex max-w-3xl items-center justify-between px-6 py-4">
@@ -47,3 +33,17 @@
 		</a>
 	</footer>
 </div>
+
+<script lang="ts">
+	import { createRouter, Router } from 'sv-router';
+	import About from './About.svelte';
+	import NotFound from './NotFound.svelte';
+	import Todos from './Todos.svelte';
+
+	const { isActive } = createRouter({ '/': Todos, '/about': About, '*': NotFound });
+
+	const links = [
+		{ href: '/', label: 'Todos' },
+		{ href: '/about', label: 'About' }
+	] as const;
+</script>

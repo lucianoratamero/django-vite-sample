@@ -9,5 +9,7 @@
 		"stylesheet": "./src/app.css"
 	},
 	"ignorePatterns": ["package-lock.json", "pnpm-lock.yaml", "yarn.lock", "bun.lock", "bun.lockb"],
-	"svelte": {}
+	"svelte": {
+		"sortOrder": "options-markup-scripts-styles"
+	}
 }
